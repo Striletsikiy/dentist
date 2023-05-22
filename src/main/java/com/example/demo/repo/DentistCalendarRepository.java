@@ -10,7 +10,7 @@ import java.util.List;
 
 public interface DentistCalendarRepository extends JpaRepository<DentistCalendar,Long> {
 
-    @Query("SELECT d FROM dentistCalendar d WHERE d.denrist.id = ?1 and date >= ?2")
+    @Query("SELECT d FROM DentistCalendar d WHERE d.dentist.id = ?1 and date >= ?2")
     List<DentistCalendar> getDentistCalendar(long dentistId, Date date);
 
 

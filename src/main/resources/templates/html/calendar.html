@@ -8,72 +8,19 @@
 </head>
 <body>
 
-
-
-
-<div class="register-form-container2 select-offer-container">
-  <div class="container-services" th:each="calendar : ${dentistCalendars}">
-    <label class="label-services" th:text="${calendars.date}"></label>
-  </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<main>
-  <div class="calendar-container">
-    <h1>Календар з вибором години</h1>
-    <table>
-      <thead>
-      <tr>
-        <th>Понеділок</th>
-        <th>Вівторок</th>
-        <th>Середа</th>
-        <th>Четвер</th>
-        <th>П'ятниця</th>
-        <th>Субота</th>
-        <th>Неділя</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr th:each="week,weekIndex : ${calendar}">
-        <td th:each="day,dayIndex : ${week}">
-          <div class="calendar-day">
-            <div class="calendar-date">
-              <span th:text="${day.dayOfMonth()}"></span>
-              <span th:text="${day.month().name()}"></span>
-              <span th:text="${day.year()}"></span>
-            </div>
-            <div class="calendar-times">
-              <form th:action="@{/book}" method="post">
-                <input type="hidden" name="date" th:value="${day}">
-                <select name="time">
-                  <option value="10:00 - 11:00">10:00 - 11:00</option>
-                  <option value="11:00 - 12:00">11:00 - 12:00</option>
-                </select>
-                <button type="submit">Забронювати</button>
-              </form>
-            </div>
-          </div>
-        </td>
-      </tr>
-      </tbody>
-    </table>
+<main class="main">
+  <div class="register-form-container">
+    <h1 >Ваші пацієнти</h1>
+    <div class="register-form-container2">
+      <div class="box">
+        <div class="container-inormation" th:each="calendar : ${dentistCalendars}">
+          <div class="inormation" th:text="${calendar.date}"></div>
+        </div>
+      </div>
+    </div>
+    <input type="submit" class="button" value="Записатися">
   </div>
 </main>
-
-
 
 </body>
 </html>

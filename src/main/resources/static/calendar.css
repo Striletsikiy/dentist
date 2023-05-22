@@ -1,4 +1,165 @@
 body{
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+*,
+*:before,
+*:after{
+    box-sizing: border-box;
+}
+h1,h2,h3,h4,h5,h6{
+    margin: 0;
+}
+.container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.header{
+    width: 100%;
+    position: absolute;
+    margin-top: 10px;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+.header_inner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.img{
+    border-radius: 10px;
+}
+.nav{
+    display: flex;
+    font-size: 20px;
 
-    background-color: #6c6c6c;
+}
+.nav_link{
+    vertical-align: top;
+    margin: 0 0 0 40px;
+
+    color: #FFFFFF;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    transition: color .2s linear;
+}
+.nav_link:hover{
+    color: #7c7c7c;
+}
+.name{
+    vertical-align: top;
+    margin: 0 0 0 40px;
+
+    color: #FFFFFF;
+    text-decoration: none;
+}
+.main{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background: url("/img/RecordDentist Background.jpg") center no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+.register-form-container {
+
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    padding: 30px;
+}
+.register-form-container2 {
+
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 10px;
+    padding: 30px
+}
+h1{
+    text-align: center;
+    margin-bottom: 15px;
+}
+.container-inormation{
+
+
+
+    background: rgb(255, 255, 255);
+    border-radius: 10px;
+
+    margin-top: 15px;
+    margin-right: 25px;
+}
+.inormation{
+    height: 100px;
+    width: 100px;
+    flex-shrink: 0;
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 10px;
+    margin-right: 5px;
+    margin-left: 15px;
+
+}
+.box{
+    display: flex;
+    flex-wrap: nowrap;
+    height: 500px;
+    width: 500px;
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+}
+.button-inormation{
+
+    padding: 10px 15px;
+
+
+    font-size: 16px;
+    font-weight: 600;
+    color: #000000;
+    text-decoration: none;
+    border: none;
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    transition: background .2s linear,
+    color 1s linear ;
+}
+.button-inormation:hover{
+    background-color: rgb(178, 178, 178);
+}
+.container-data{
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+.gap-week{
+    display: flex;
+    gap: 140px;
+}
+.about2{
+    display: flex;
+    justify-content: space-between;
+}
+.button{
+    margin-top: 38px;
+    display: block;
+    background: #035cd7;
+    border-radius: 8px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 40px;
+    padding: 5px 275px;
+    text-decoration: none;
+    border: none;
 }
