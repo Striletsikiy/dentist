@@ -351,7 +351,96 @@ h1,h2,h3,h4,h5,h6{
 
 
 
+/* ТУТ БУВ ІЛЛЯ */
 
+.card {
+    width: 400px;
+    height: 600px;
+    background-image: url("img/2.jpg");
+    position: relative;
+}
+
+.card:before {
+    position: absolute;
+    content: '';
+    height: 100%;
+    transition: .5 all;
+    width: 100%;
+    opacity: 0;
+    z-index: 1;
+    background: linear-gradient(to bottom,#0020c9, #b4b4b4);
+
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 60px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.cards_container {
+    display: flex;
+    padding: 0px 80px;
+    justify-content: center;
+    align-items: center;
+}
+
+.card:hover:before {
+    opacity: .9;
+}
+
+.card:hover .card_info h3 {
+    color: white;
+}
+
+.card:hover .card_text {
+    opacity: 1;
+}
+
+.card:hover .card_btn{
+    opacity: 0;
+}
+
+.card_info h3 {
+    text-align: center;
+    width: 100%;
+    color: #000000;
+    font-size: 30px;
+    padding-top: 15px;
+    text-transform: uppercase;
+    font-weight: 700;
+    transition: .5s all;
+}
+
+.card_info {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    height: 100%;
+    z-index: 15;
+    position: relative;
+    transition: .5s all;
+}
+
+.card_text {
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    font-size: 18px;
+    text-align: center;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    font-weight: 400;
+    transition: .5s all;
+}
+
+.card_btn_container {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
 
 .card_btn {
     display: flex;
@@ -368,6 +457,8 @@ h1,h2,h3,h4,h5,h6{
 }
 
 
+
+/*<img src="img/2.jpg"/>*/
 
 
 
