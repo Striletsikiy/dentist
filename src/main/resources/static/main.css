@@ -15,22 +15,66 @@ body{
 h1,h2,h3,h4,h5,h6{
     margin: 0;
 }
+
+/*header*/
+
+.header{
+    width: 100%;
+    position: absolute;
+    margin-top: 10px;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
 .container {
     width: 100%;
     max-width: 1500px;
     margin: 0 auto;
 }
+.header_inner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.img{
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+}
+.menu{
+     display: flex;
+     font-size: 20px;
+     text-transform: uppercase;
+ }
+.menu_link{
+      vertical-align: top;
+
+      color: #FFFFFF;
+      text-decoration: none;
+
+      transition: color .2s linear;
+  }
+.menu_link:hover{
+       color: #7c7c7c;
+   }
+
+/*header*/
+
+/*intro*/
+
 .intro{
     display: flex;
     flex-direction: column;
     justify-content: center;
     width: 100%;
-    height: 100vh;
+    height: 90vh;
 
     background: url("img/1.jpg") center no-repeat;
     -webkit-background-size: cover;
     background-size: cover;
 }
+
 .intro_inner{
     width: 100%;
     max-width: 600px;
@@ -72,140 +116,72 @@ h1,h2,h3,h4,h5,h6{
     background-color: rgb(252, 252, 252);
     color: #000000;
 }
-.header{
-    width: 100%;
-    position: absolute;
-    margin-top: 10px;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1;
-}
-.header_inner{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.nav{
-    display: flex;
-    font-size: 20px;
-    text-transform: uppercase;
-}
-.nav_link{
-    vertical-align: top;
-    margin: 0 40px;
 
-    color: #FFFFFF;
-    text-decoration: none;
+/*intro*/
 
-    transition: color .2s linear;
-}
-.nav_link:hover{
-    color: #7c7c7c;
-}
-.section{
-    padding: 0 0 100px;
-}
-.section_header{
+/*headline*/
+
+.headline{
     width: 100%;
-    margin: 20px 0;
+    margin: 15px 0 15px 0;
     color: #000000;
     text-align: center;
     font-size: 60px;
     font-weight: 700;
 }
-.about{
-    display: flex;
-    justify-content: space-between;
+
+/*headline*/
+
+/*Services*/
+
+.card_container {
+    border: solid 2px red;
 }
-.about_item{
-    width: 400px;
+
+.Services_img {
     position: relative;
+}
 
-    color: #000000;
-    margin: 30px auto 30px;
-}
-.about_item:hover .about_img img{
-    opacity: .10;
-}
-.about_item:hover .about_text {
-    color: #ffffff;
-}
-.about_item:hover .about_text2 {
-    opacity: 1;
-}
-.about_img{
-    background: linear-gradient(to bottom,
-    #0020c9, #b4b4b4);
-    border-radius: 10px;
-}
-.about_img img{
-    display: block;
-    transition: opacity .4s linear;
-}
-.about_text{
-    width: 100%;
-    text-align: center;
-    max-width: 350px;
-
-    font-size: 30px;
-    color: #000000;
-    text-transform: uppercase;
-    font-weight: 700;
-
-
+.Services_img img {
     position: absolute;
-    top: 50%;
-    left: 0;
-    z-index: 2;
-    transform: translate3d(25px,-270px,0px);
-    transition: background .2s linear,
-    color 1s linear ;
+    width: 400px;
+    z-index: -1;
+}
+
+.card{
+
+}
+.Services_img{
+
+}
+.img2{
+
+ }
+.card_title{
+    color: black;
+
+}
+.card_text{
+    color: black;
 
 
 }
-.about_text2{
-    width: 100%;
-    max-width: 300px;
-    text-align: center;
+.card_button {
+    color: black;
 
-    font-size: 18px;
-    color: #FFFFFF;
-    text-transform: uppercase;
-    font-weight: 400;
-    opacity: 0;
-
-
-    position: absolute;
-    top: 50%;
-    left: 0;
-    z-index: 2;
-    transform: translate3d(16%,-50%,0);
-    transition: opacity .2s linear;
 }
 
-.about2{
-    display: flex;
-    justify-content: space-between;
-}
-.about2_text{
-    width: 100%;
 
-    font-size: 36px;
-    color: #000000;
-    text-transform: uppercase;
-    font-weight: 700;
-    text-align: center;
-    margin-bottom: 100px;
-}
+/*Services*/
+
+
 .footer{
-    padding-top: 20px;
-
     background-color: #464646;
 }
 .footer_inner{
-    display: flex;
+    padding-top: 20px;
     padding-bottom: 30px;
+    display: flex;
 }
 .footer_col--1{
     width: 33.3%;
@@ -236,36 +212,47 @@ h1,h2,h3,h4,h5,h6{
     font-size: 30px;
     padding: 30px;
 }
-.main{
-
-}
 .map{
-    width:  1903px;
+    width:  100%;
     height: 650px;
-
+    border: 0;
 }
-/*.section3{*/
-/*    background-color: #adadad;*/
-/*}*/
 
-.container2{
+/*team*/
+
+.container_team{
     width: 100%;
-    max-width: 1000px;
     margin: 0 auto;
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
 }
-.img{
+.name_team{
+     width: 100%;
+     font-size: 36px;
+     color: #000000;
+     text-transform: uppercase;
+     font-weight: 700;
+
+ }
+.img_team {
+    text-align: center;
+    color: #0020c9;
+    width: 90%;
     border-radius: 10px;
 }
+
+/*team*/
+
+
 .img1{
     width: 350px;
     border-radius: 10px;
 }
-.img2{
-    border-radius: 10px;
-}
+
 .section2{
     padding: 60px 0;
-    background: url("/img/RecordDentist Background.jpg") center no-repeat;
+    background: url("img/RecordDentist Background.jpg") center no-repeat;
     -webkit-background-size: cover;
     background-size: cover;
     margin-bottom: 150px ;
@@ -334,33 +321,7 @@ h1,h2,h3,h4,h5,h6{
     transition: opacity .2s linear;
 }
 
-.about_text3 {
-    display: inline-block;
-    vertical-align: top;
-    padding: 10px 15px;
 
-    background-color: rgba(255, 255, 255, 0.5);
-    border-radius: 10px;
-    
-    font-size: 16px;
-    font-weight: 700;
-    color: #000000;
-    text-transform: uppercase;
-    text-decoration: none;
-
-    width: 100%;
-    text-align: center;
-    max-width: 350px;
-
-    position: absolute;
-    top: 85%;
-    left: 0;
-    z-index: 1;
-    transform: translate3d(25px,0,0);
-}
-.about_item:hover .about_text3 {
-    opacity: 0;
-}
 .about_text4 {
     display: flex;
     vertical-align: top;
@@ -392,6 +353,19 @@ h1,h2,h3,h4,h5,h6{
 
 
 
+.card_btn {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 10px 140px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #000000;
+    text-transform: uppercase;
+    text-decoration: none;
+}
 
 
 
