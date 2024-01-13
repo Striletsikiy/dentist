@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Записатися до стоматолога</title>
+</head>
+
+<body>
+
+<div th:each="dentist : ${dentists}">
+    <div th:text="${dentist.name}"></div>
+    <div><img th:src="${dentist.photo}"></div>
+</div>
+
+
+</body>
+</html>

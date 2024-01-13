@@ -5,7 +5,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="../../static/SignUp.css">
+    <link type="text/css" href="/signUp.css" th:href="@{signUp.css}" rel="stylesheet" />
     <meta charset="UTF-8">
     <title>Реєстрація</title>
 </head>
@@ -19,34 +19,38 @@
         <h1 class="form-title">
             Створити обліковий запис
         </h1>
-        <div class="form-fields">
-            <div class="form-field">
-                <input type="text" placeholder="Ім'я">
+        <form th:action="@{/SignUp}" th:object="${user}" method="POST" enctype="utf8">
+            <div class="form-fields">
+                <div class="form-field">
+                    <input class="input" th:field="*{firstName}" type="text" placeholder="Ім'я"/>
+                    <p th:each="error: ${#fields.errors('firstName')}"
+                       th:text="${error}">Validation error</p>
+                </div>
+                <div class="form-field">
+                    <input class="input" type="email" placeholder="Email" th:field="*{email}"/>
+                    <p th:each="error : ${#fields.errors('email')}"
+                       th:text="${error}">Validation error</p>
+                </div>
+                <div class="form-field">
+                    <input class="input" type="text" placeholder="Номер телефону">
+                </div>
+                <div class="form-field">
+                    <input class="input" type="password" placeholder="Пароль" th:field="*{password}"/>
+                    <p th:each="error : ${#fields.errors('password')}"
+                       th:text="${error}">Validation error</p>
+                </div>
+                <div class="form-field">
+                    <input class="input" type="password" placeholder="Підтвердити пароль" th:field="*{matchingPassword}"/>
+                </div>
             </div>
-            <div class="form-field">
-                <input type="text" placeholder="Email">
+            <div class="form-buttons">
+                <!--            <input type="submit" class="button-input" value="Зареєструватися">-->
+                <input class="button-input" type="submit"  value="Зареєструватися"/>
+                <div class="divider">Або якщо ви вже зареєстровані</div>
+                <a href="/Login" class="button">Увійти в обліковий запис</a>
             </div>
-            <div class="form-field">
-                <input type="text" placeholder="Номер телефону">
-            </div>
-            <div class="form-field">
-                <input type="text" placeholder="Пароль">
-            </div>
-            <div class="form-field">
-                <input type="text" placeholder="Підтвердити пароль">
-            </div>
-        </div>
-        <div class="form-buttons">
-            <a class="button">зареєструватися</a>
-            <div class="divider">Або якщо ви вже зареєстровані</div>
-            <a href="Login.html" class="button">Увійти в обліковий запис</a>
-        </div>
+        </form>
     </div>
 </main>
-
-
-
-
-
 </body>
 </html>

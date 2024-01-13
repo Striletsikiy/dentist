@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+  <link type="text/css" href="/calendar.css" th:href="@{calendar.css}" rel="stylesheet"/>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<main class="main">
+  <div class="register-form-container">
+    <h1 >Ваші пацієнти</h1>
+    <div class="register-form-container2">
+      <div class="box">
+        <div class="container-inormation" th:each="calendar : ${dentistCalendars}">
+          <div class="inormation" th:text="${calendar.date}"></div>
+        </div>
+      </div>
+    </div>
+    <input type="submit" class="button" value="Записатися">
+  </div>
+</main>
+
+</body>
+</html>

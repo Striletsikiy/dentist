@@ -1,37 +1,39 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 <head>
-    <script src="https://kit.fontawesome.com/4d999c78da.js" crossorigin="anonymous"></script>
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-    <link type="text/css" href="../../static/Main.css" th:href="@{../../static/Main.css}" rel="stylesheet" />
+    <link type="text/css" href="/main.css" th:href="@{main.css}" rel="stylesheet"/>
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
     <title>Стоматологічний сайт</title>
-
-
 </head>
 <body>
-
 
 
 <header class="header">
     <div class="container">
         <div class="header_inner">
-            <div class="logo"><a href="/" class="logo-img">
-                <img class="img" src="../img/logotype.jpg" width="60" height="60"></a></div>
-            <nav class="nav">
-                <a class="nav_link" href="#block-1">Послуги</a>
-                <a class="nav_link" href="#block-3">Команда</a>
-                <a class="nav_link" href="#block-4">Локація</a>
-                <a class="nav_link" href="#block-2">Досвід</a>
-                <a class="nav_link" href="#block-5">Контакти</a>
-                <a class="nav_link" href=Login.html>Вхід</a>
+                <img class="img" src="/img/logotype.jpg">
+            <nav class="menu">
+                <a class="menu_link" href="#block-1">Послуги</a>
+                <a class="menu_link" href="#block-3">Команда</a>
+                <a class="menu_link" href="#block-4">Локація</a>
+                <a class="menu_link" href="#block-2">Досвід</a>
+                <a class="menu_link" href="#block-5">Контакти</a>
+                <div class="" sec:authorize="hasRole('ROLE_CLIENT')">
+                    <a class="menu_link" href="UserPage">Мої записи</a>
+                </div>
+                <!--<div class="nav_link"  sec:authentication="name"></div>-->
+                <!--<a sec:authorize="isAuthenticated()" class="nav_link" href=/UserPage>Мої записи</a>-->
+                <a sec:authorize="isAuthenticated()" class="menu_link" href=/logout>Вихід</a>
+                <a sec:authorize="!isAuthenticated()" class="menu_link" href=/login>Вхід</a>
             </nav>
         </div>
     </div>
 </header>
+
 
 
 <div class="intro">
@@ -39,264 +41,209 @@
         <div class="intro_inner">
             <h1 class="intro_title"> СТОМАТОЛОГІЧНА КЛІНІКА </h1>
             <h2 class="intro_title_2">лікування зубів, брекети, відновлення та чистка в Івано-франківськ</h2>
-            <a class="btn" href="SignUp.html">Записатися на прийом</a>
+            <div sec:authorize="!hasRole('ROLE_DENTIST')">
+                <a class="btn" href="appointment">Записатися на прийом</a>
+            </div>
+            <div sec:authorize="hasRole('ROLE_DENTIST')">
+                <a class="btn" href="DentistPage">Записи на прийом</a>
+            </div>
         </div>
     </div>
 </div>
 
 
-
-<section class="section">
-    <div class="container">
-
-        <div class="section_header">
+        <div class="headline">
             <div id="block-1">
-                <h2 class="section_title">Послуги</h2>
+                <h2>Послуги</h2>
             </div>
         </div>
 
-
-        <div class="about">
-            <div class="about_item">
-                <div class="about_img">
-                    <img class="img2" src="../img/9.jpg">
-                </div>
-                <div class="about_text">Відбілювання</div>
-                <div class="about_text2">
-                    Відбілювання зубів Beyond. Сяюча посмішка без наслідків
-                </div>
-            </div>
-            <div class="about_item">
-                <div class="about_img">
-                    <img class="img2" src="../img/3.jpg">
-                </div>
-                <div class="about_text">Лікування зубів</div>
-                <div class="about_text2">
-                    У мережі клінік "Український
-                    Стоматологічний Центр"
-                    лікування зубів проводиться з використанням
-                    найсучасніших технологій
+    <div class="cards_container">
+        <div class="cards">
+            <div class="card">
+                <div class="card_info">
+                    <h3>Відбілювання</h3>
+                    <p class="card_text">It is a long established fact that a reader will be distracted by the readable content of a page when
+                        looking at its layout</p>
+                    <div class="card_btn_container">
+                        <p class="card_btn">Детальніше</p>
+                    </div>
                 </div>
             </div>
-            <div class="about_item">
-                <div class="about_img">
-                    <img class="img2" src="../img/4.jpg">
-                </div>
-                <div class="about_text">Пародонтологія</div>
-                <div class="about_text2">
-                    Пародонтит - Це не що інше, як захворювання пародонту -
-                    цірого комплексу тканин, що
-                    утримують зуб не
-                    своєму місці
+            <div class="card">
+                <div class="card_info">
+                    <h3>Відбілювання</h3>
+                    <p class="card_text">It is a long established fact that a reader will be distracted by the readable content of a page when
+                        looking at its layout</p>
+                    <div class="card_btn_container">
+                        <p class="card_btn">Детальніше</p>
+                    </div>
                 </div>
             </div>
-        </div>
-
-        <div class="about">
-            <div class="about_item">
-                <div class="about_img">
-                    <img class="img2" src="../img/5.jpg">
-                </div>
-                <div class="about_text">Протезування</div>
-                <div class="about_text2">
-                    Протезування зубів є комплексом методик
+            <div class="card">
+                <div class="card_info">
+                    <h3>Відбілювання</h3>
+                    <p class="card_text">It is a long established fact that a reader will be distracted by the readable content of a page when
+                        looking at its layout</p>
+                    <div class="card_btn_container">
+                        <p class="card_btn">Детальніше</p>
+                    </div>
                 </div>
             </div>
-            <div class="about_item">
-                <div class="about_img">
-                    <img class="img2" src="../img/6.jpg">
-                </div>
-                <div class="about_text">Імплантація</div>
-                <div class="about_text2">
-                    Пропонуємо своїм пацієнтам новітню методику, під назвою
-                    дентальная імплантація зубів.
-                </div>
-            </div>
-            <div class="about_item">
-                <div class="about_img">
-                    <img class="img2" src="../img/7.jpg">
-                </div>
-                <div class="about_text">Ортодонтія</div>
-                <div class="about_text2">
-                    В мережі наших стоматологічних клінік використовуються
-                    брекети і супутні ортодонтическиематеріали
-                    провідних виробників
+            <div class="card">
+                <div class="card_info">
+                    <h3>Відбілювання</h3>
+                    <p class="card_text">It is a long established fact that a reader will be distracted by the readable content of a page when
+                        looking at its layout</p>
+                    <div class="card_btn_container">
+                        <p class="card_btn">Детальніше</p>
+                    </div>
                 </div>
             </div>
-        </div>
-
-        <div class="about">
-            <div class="about_item">
-                <div class="about_img">
-                    <img class="img2" src="../img/8.jpg">
-                </div>
-                <div class="about_text">Хірургія</div>
-                <div class="about_text2">
-                    Сьогодні вже нормою стала наявність в кожній
-                    стоматологічній клініці відділення хірургії,
-                    в якому проводиться імплантація та видалення зубів
+            <div class="card">
+                <div class="card_info">
+                    <h3>Відбілювання</h3>
+                    <p class="card_text">It is a long established fact that a reader will be distracted by the readable content of a page when
+                        looking at its layout</p>
+                    <div class="card_btn_container">
+                        <p class="card_btn">Детальніше</p>
+                    </div>
                 </div>
             </div>
-            <div class="about_item">
-                <div class="about_img">
-                    <img class="img2" src="../img/2.jpg">
-                </div>
-                <div class="about_text">Цифрова стоматологія CEREC</div>
-                <div class="about_text2">У мережі клінік "Український
-                    Стоматологічний Центр"
-                    лікування зубів проводиться з використанням
-                    найсучасніших технологій
+            <div class="card">
+                <div class="card_info">
+                    <h3>Відбілювання</h3>
+                    <p class="card_text">It is a long established fact that a reader will be distracted by the readable content of a page when
+                        looking at its layout</p>
+                    <div class="card_btn_container">
+                        <p class="card_btn">Детальніше</p>
+                    </div>
                 </div>
             </div>
-            <div class="about_item">
-                <div class="about_img">
-                    <img class="img2" src="../img/10.jpg">
+            <div class="card">
+                <div class="card_info">
+                    <h3>Відбілювання</h3>
+                    <p class="card_text">It is a long established fact that a reader will be distracted by the readable content of a page when
+                        looking at its layout</p>
+                    <div class="card_btn_container">
+                        <p class="card_btn">Детальніше</p>
+                    </div>
                 </div>
-                <div class="about_text">Дитяча стоматологія</div>
-                <div class="about_text2">
-                    “Український Стоматологічний Центр” пропонує повний спектр послуг
-                    дитячої стоматології
+            </div>
+            <div class="card">
+                <div class="card_info">
+                    <h3>Відбілювання</h3>
+                    <p class="card_text">It is a long established fact that a reader will be distracted by the readable content of a page when
+                        looking at its layout</p>
+                    <div class="card_btn_container">
+                        <p class="card_btn">Детальніше</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card_info">
+                    <h3>Відбілювання</h3>
+                    <p class="card_text">It is a long established fact that a reader will be distracted by the readable content of a page when
+                        looking at its layout</p>
+                    <div class="card_btn_container">
+                        <p class="card_btn">Детальніше</p>
+                    </div>
                 </div>
             </div>
         </div>
-
     </div>
-</section>
 
-<div class="container">
-    <div class="section_header">
+<!--     div   <div class="Services_case">-->
+
+
+<div class="headline">
         <div id="block-2">
-            <h2 class="section_title">Досвід</h2>
+            <h2>Досвід</h2>
         </div>
-    </div>
 </div>
+
 
 <div class="section2">
-    <div class="container">
         <div class="about">
             <div class="experience_item">
                 <div class="experience_img">
-                    <img class="img1" src="../img/experience1.jpg">
+                    <img class="img1" src="/img/experience1.jpg">
                 </div>
                 <div class="experience_text">Сучасно</div>
                 <div class="experience_text2">Застосування у роботі технологій –
                     використання ультразвукової апаратури для лікування зубів</div>
+                <div class="about_text4">Дитальніше</div>
             </div>
             <div class="experience_item">
                 <div class="experience_img">
-                    <img class="img1" src="../img/experience2.jpg">
+                    <img class="img1" src="/img/experience2.jpg">
                 </div>
                 <div class="experience_text">Комфортно</div>
                 <div class="experience_text2">Забезпечення високоякісного сервісу
                     завдяки індивідуальному підходу до кожного клієнта</div>
+                <div class="about_text4">Дитальніше</div>
             </div>
             <div class="experience_item">
                 <div class="experience_img">
-                    <img class="img1" src="../img/experience3.jpg">
+                    <img class="img1" src="/img/experience3.jpg">
                 </div>
                 <div class="experience_text">3000+</div>
-                <div class="experience_text2">Здорових посмішок і вдячних пацієнтів
-                </div>
+                <div class="experience_text2">Здорових посмішок і вдячних пацієнтів</div>
+                <div class="about_text4">Дитальніше</div>
             </div>
             <div class="experience_item">
                 <div class="experience_img">
-                    <img class="img1" src="../img/experience4.jpg">
+                    <img class="img1" src="/img/experience4.jpg">
                 </div>
                 <div class="experience_text">25+</div>
                 <div class="experience_text2">Років досвіду
                     в сфері стоматології</div>
+                <div class="about_text4">Дитальніше</div>
             </div>
         </div>
-    </div>
 </div>
 
 
-<div class="container">
-    <div class="section_header">
+<div class="headline">
         <div id="block-3">
-            <h2 class="section_title">Команда</h2>
+            <h2>Команда</h2>
         </div>
-    </div>
 </div>
 
 
-<div class="section3">
-    <div class="container2">
-
-        <div class="about2">
-            <div class="about2_item">
-                <div class="about2_img">
-                    <img class="img" src="../img/team1.jpg">
+    <div class="container_team">
+                <div>
+                    <img class="img_team" src="/img/team1.jpg">
+                    <div class="name_team">ВІКТОР</div>
                 </div>
-                <div class="about2_text">ВІКТОР</div>
-            </div>
-            <div class="about2_item">
-                <div class="about2_img">
-                    <img class="img" src="../img/team2.jpg">
+                <div>
+                    <img class="img_team" src="/img/team2.jpg">
+                    <div class="name_team">ЛЕСЯ</div>
                 </div>
-                <div class="about2_text">ЛЕСЯ</div>
-            </div>
-            <div class="about2_item">
-                <div class="about2_img">
-                    <img class="img" src="../img/team3.jpg">
+                <div>
+                    <img class="img_team" src="/img/team3.jpg">
+                    <div class="name_team">ДАНИЛО</div>
                 </div>
-                <div class="about2_text">ДАНИЛО</div>
-            </div>
-        </div>
-
-        <div class="about2">
-            <div class="about2_item">
-                <div class="about2_img">
-                    <img class="img" src="../img/team4.jpg">
-                </div>
-                <div class="about2_text">МАРІЯ</div>
-            </div>
-            <div class="about2_item">
-                <div class="about2_img">
-                    <img class="img" src="../img/team5.jpg">
-                </div>
-                <div class="about2_text">ІРИНА</div>
-            </div>
-            <div class="about2_item">
-                <div class="about2_img">
-                    <img class="img" src="../img/team6.jpg">
-                </div>
-                <div class="about2_text">ЮЛІЯ</div>
-            </div>
-        </div>
-
     </div>
-</div>
 
 
-<div class="container">
-    <div class="section_header">
+<div class="headline">
         <div id="block-4">
-            <h2 class="section_title">Локація</h2>
+            <h2>Локація</h2>
         </div>
-    </div>
 </div>
-
-
-<main class="main">
-    <div class="container">
-        <div id="map">
-            <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20983.653103885033!2d24.8451984651123!3d48.89716354582231!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4730c329402d993b%3A0xbbbbbb5a31cc5839!2z0J3QvtCy0LAg0L_QvtGI0YLQsCDihJYx!5e0!3m2!1suk!2sua!4v1676925993890!5m2!1suk!2sua" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-    </div>
-</main>
 
 
 <footer class="footer">
-    <div class="container">
+<iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20983.653103885033!2d24.8451984651123!3d48.89716354582231!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4730c329402d993b%3A0xbbbbbb5a31cc5839!2z0J3QvtCy0LAg0L_QvtGI0YLQsCDihJYx!5e0!3m2!1suk!2sua!4v1676925993890!5m2!1suk!2sua"></iframe>
 
+    <div class="container">
         <div class="footer_inner">
             <div class="footer_col footer_col--1">
                 <div class="footer_h1">Ми знаходимось</div>
                 <div class="footer_h2">м. Івано-франківськ, вул. Голосіївська, 13-а, оф.6вул. Велика Васильківська, 86 (2-й поверх)
                     пн-пт 09:00-20:00, сб 09:00–17:00</div>
             </div>
-
 
             <div class="footer_col footer_col--2">
                 <div id="block-5">
@@ -326,5 +273,7 @@
 </footer>
 
 
+
+<script src="https://kit.fontawesome.com/4d999c78da.js" ></script>
 </body>
 </html>

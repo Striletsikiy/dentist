@@ -6,7 +6,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="../../static/Login.css">
+    <link type="text/css" href="/login.css" rel="stylesheet" />
     <meta charset="UTF-8">
     <title>Вхід</title>
 </head>
@@ -19,23 +19,23 @@
         <form th:action="@{/login}" method="post">
         <div class="form-fields">
             <div class="form-field">
-                <input type="text" placeholder="Email" name="username">
+                <input class="input" type="text" placeholder="Email" name="username">
             </div>
             <div class="form-field">
-                <label> Пароль <input type="password" placeholder="Пароль" name="password"/> </label>
+                <input class="input" type="password" placeholder="Пароль" name="password"/>
             </div>
         </div>
         <div class="form-buttons">
-            <a href="UserPage.html " class="button">Увійти</a>
+            <input class="button-input" name="submit" type="submit" value="Увійти" />
             <div class="divider">Або</div>
-            <a  href="SignUp.html" class="button" > Створити обліковий запис</a>
+            <a href="/SignUp" class="button">Створити обліковий запис</a>
         </div>
+            <input type="hidden"
+                   name="${_csrf.parameterName}"
+                   value="${_csrf.token}"/>
         </form>
     </div>
 </main>
-
-
-
 
 </body>
 </html>

@@ -1,0 +1,190 @@
+body{
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+*,
+*:before,
+*:after{
+    box-sizing: border-box;
+}
+h1,h2,h3,h4,h5,h6{
+    margin: 0;
+}
+.container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+
+}
+.header{
+    width: 100%;
+    position: absolute;
+    margin-top: 10px;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+.header_inner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.img{
+    border-radius: 10px;
+}
+.nav{
+    display: flex;
+    font-size: 20px;
+}
+.nav_link{
+    vertical-align: top;
+    margin: 0 0 0 40px;
+
+    color: #FFFFFF;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    transition: color .2s linear;
+}
+.nav_link:hover{
+    color: #7c7c7c;
+}
+.name{
+    vertical-align: top;
+    margin: 0 0 0 40px;
+
+    color: #FFFFFF;
+    text-decoration: none;
+}
+.main{
+    display: flex;
+    justify-content: center;
+    background: url("/img/RecordDentist Background.jpg") center no-repeat;
+
+}
+.register-form-container {
+    margin-top: 80px;
+    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    padding: 30px
+}
+.about{
+    display: flex;
+    justify-content: space-between;
+    margin-right: 25px;
+}
+.button{
+    /*width: 100%;*/
+
+    color: #6c6c6c;
+    text-align: center;
+    font-size: 100px;
+    font-weight: 200;
+    text-decoration: none;
+
+    border: 2px solid #6c6c6c;
+
+    border-radius: 10px;
+    padding: 50px 205px 50px 205px;
+
+    transition: background .6s linear,
+    color .6s linear ;
+}
+.button:hover {
+    background-color: rgba(255, 255, 255, 0.85);
+    color: #000000;
+    border: 2px solid #000000;
+}
+.h1{
+    text-align: center;
+    margin-bottom: 30px;
+}
+.img-dentist{
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 120px;
+
+}
+.container-inormation{
+    display: block;
+    height: 120px;
+    width: 330px;
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    background: rgb(255, 255, 255);
+    border-radius: 10px;
+    padding-left: 15px;
+    padding-top: 10px;
+
+
+}
+.container-dentist{
+    display: flex;
+    justify-content: space-between;
+
+}
+.inormation{
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 10px;
+
+}
+.button-inormation{
+    display: inline-block;
+    vertical-align: top;
+    padding: 10px 15px;
+    margin-top: 10px;
+
+
+    font-size: 14px;
+    font-weight: 700;
+    color: #000000;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: none;
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    transition: background .2s linear,
+    color 1s linear ;
+}
+.button-inormation:hover{
+    background-color: rgb(178, 178, 178);
+}
+.section{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 10px;
+    padding: 20px;
+    margin-right: 25px;
+}
+.container-button-inormation{
+    display: flex;
+    justify-content: space-between;
+}
+.box{
+    height: 747px;
+    overflow-y: auto;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

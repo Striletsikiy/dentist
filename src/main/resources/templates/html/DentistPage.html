@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="../../static/DentistPage.css">
+    <link type="text/css" href="/dentistPage.css" th:href="@{dentistPage.css}" rel="stylesheet">
     <meta charset="UTF-8">
     <title></title>
 </head>
@@ -15,10 +15,12 @@
 <header class="header">
     <div class="container">
         <div class="header_inner">
-            <div class="logo"><a href="Main.html" class="logo-img">
+            <div class="logo"><a href="/" class="logo-img">
                 <img class="img" src="../img/logotype.jpg" width="60" height="60"></a></div>
             <nav class="nav">
-                <a class="nav_link" href="Main.html">Вийти</a>
+                <a class="nav_link" href="/">На головну</a>
+                <a sec:authorize="isAuthenticated()" class="nav_link" href=/logout>вийти з аккаунта</a>
+                <div class="name"  sec:authentication="name"></div>
             </nav>
         </div>
     </div>
@@ -28,14 +30,27 @@
 
 <main class="main">
     <div class="register-form-container">
+        <h1 >Ваші пацієнти</h1>
         <div class="register-form-container2">
+            <div class="container-h2">
+                <h2 >Ім’я</h2>
+                <h2 >Телефон</h2>
+                <h2 >Дату і час</h2>
+                <h2 >Послугу</h2>
+            </div>
+            <div class="box">
+                <div class="container-inormation" th:each="record : ${patientRecords}">
+                    <div class="inormation" th:text="${record.patient.name}">Name</div>
+                    <div class="inormation" th:text="${record.patient.phone}">phone</div>
+                    <div class="inormation" th:text="${record.date}">Date</div>
+                    <div class="inormation" th:text="${record.service.name}">Service</div>
+                    <a class="button-inormation" th:href="@{/DentistPage/delete/{id}(id=${record.id})}">Видалити </a>
+                </div>
+            </div>
 
         </div>
     </div>
 </main>
-
-
-
 
 </body>
 </html>

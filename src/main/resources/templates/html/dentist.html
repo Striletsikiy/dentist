@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<link rel="stylesheet" href="/dentist.css">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+
+<main>
+  <div class="register-form-container">
+
+    <form class="record-form" action="#" th:action="@{/calendar}" th:object="${appointmentData}" method="post">
+
+
+      <h2 class="form-title2">Виберіть стоматолога</h2>
+
+      <div class="register-form-container3 select-doctor-container">
+        <div class="section3" th:each="dentist : ${dentists}">
+          <div class="container-dentist">
+            <div class="about2_item">
+              <div class="about2_img">
+                <img th:src="${dentist.photo}">
+              </div>
+
+              <input class="button-dentist" type="radio" th:field="*{dentistId}" th:value="${dentist.id}"/>
+              <label class="label-dentist" th:text="${dentist.name}">Name</label>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <input type="submit" class="button" value="Підтвердити">
+
+    </form>
+
+  </div>
+
+</main>
+
+</body>
+</html>

@@ -2,15 +2,12 @@ body{
     margin: 0;
     font-family: 'Roboto', sans-serif;
 }
-input{
-    height: 45px;
-    width: 384px;
-    color: #000000;
-    font-size: 14px;
-    line-height: 16px;
-    border: 2px solid #ffffff;
+.input{
+    height: 40px;
+    width: 350px;
     border-radius: 10px;
     padding-left: 25px;
+    border: none;
 }
 main{
 
@@ -20,7 +17,7 @@ main{
     justify-content: center;
     align-items: center;
 
-    background: url("/templates/img/RecordDentist Background.jpg") center no-repeat;
+    background: url("/img/RecordDentist Background.jpg") center no-repeat;
     -webkit-background-size: cover;
     background-size: cover;
 }
@@ -28,10 +25,7 @@ main{
     max-width: 415px;
     background: rgba(255, 255, 255, 0.4);
     border-radius: 10px;
-    padding-left: 30px;
-    padding-right: 30px;
-    padding-top: 38px;
-    padding-bottom: 38px;
+    padding: 30px 30px 30px 30px;
 
 }
 .form-title{
@@ -47,19 +41,36 @@ main{
 }
 .button{
     display: block;
-    height: 40px;
     background: #035cd7;
-    border-radius: 8px;
+    border-radius: 10px;
     color: #FFFFFF;
-    text-transform: uppercase;
     text-align: center;
-    line-height: 40px;
-    padding: 4px 4px;
+    /*line-height: 40px;*/
+    padding: 10px 10px;
+    font-size: 15px;
+    font-weight: 400;
 }
 a.button{
     text-decoration: none;
 }
 .button:hover{
+    background-color: #0147a9;
+}
+.button-input{
+    height: 40px;
+    width: 375px;
+    border-radius: 10px;
+    padding-left: 25px;
+    border: none;
+    background: #035cd7;
+    color: #FFFFFF;
+    font-size: 15px;
+    font-weight: 400;
+}
+a.button-input{
+    text-decoration: none;
+}
+.button-input:hover{
     background-color: #0147a9;
 }
 .divider{
@@ -71,4 +82,20 @@ a.button{
     padding-top: 25px;
     padding-bottom: 25px;
 
+}
+.sign-in-button{
+    border: none;
+    background: #035cd7;
+    color: #FFFFFF;
+    width: 375px;
+    border-radius: 10px;
+    height: 40px;
+    font-weight: 500;
+    font-size: 15px;
+    /*line-height: 1px;*/
+    text-decoration: none;
+
+}
+.sign-in-button:hover{
+    background-color: #0147a9;
 }
